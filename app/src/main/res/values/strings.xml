@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NizeWork_Android</string>
+    <string name="todo">TODO</string>
+    <string name="nizework">NizeWork</string>
 </resources>

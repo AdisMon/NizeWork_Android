@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".LogInActivity">
+
+    <View
+        android:id="@+id/topView"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:background="#4DD0E1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/bottomView"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#4DD0E1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:background="@drawable/wave"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topView"
+            tools:ignore="NotSibling" />
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="32dp"
+            android:background="#E0E0E0"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/nizeworklogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleNizeWork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/nizework"
+            android:textColor="#2E7D32"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logoImageView" />
+
+        <TextView
+            android:id="@+id/subtitleLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Inicia Sesión"
+            android:textColor="#1A237E"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleNizeWork" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/edittext_background"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="12dp"
+            android:hint="Correo Electrónico"
+            android:inputType="textEmailAddress"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/subtitleLogin" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edittext_background"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="12dp"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            app:layout_constraintEnd_toEndOf="@id/emailEditText"
+            app:layout_constraintStart_toStartOf="@id/emailEditText"
+            app:layout_constraintTop_toBottomOf="@id/emailEditText" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_primary_background"
+            android:text="INGRESAR"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/passwordEditText"
+            app:layout_constraintStart_toStartOf="@id/passwordEditText"
+            app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
+
+        <TextView
+            android:id="@+id/noAccountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="¿NO TIENES CUENTA?"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/registerButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/registerButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="56dp"
+            android:background="@drawable/button_secondary_background"
+            android:text="REGISTRAR"
+            android:textColor="#37474F"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/loginButton"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/loginButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
