@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NizeWork_Android">
         <activity
+            android:name=".TasksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PantryListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PantryActivity"
+            android:exported="false" />
+        <activity
             android:name=".PaymentActivity"
             android:exported="false" />
         <activity

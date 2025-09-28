@@ -52,6 +52,16 @@
     <string name="expiration_date_hint">Fecha de expiración (MM/YY)</string>
     <string name="pay_button">PAGAR</string>
 
+    <string name="pantry_header">Despensa</string>
+    <string name="add_to_pantry_title">AGREGA DESPENSA</string>
+    <string name="product_label">PRODUCTO</string>
+    <string name="quantity_label">CANTIDAD</string>
+    <string name="view_product_list_button">VER LISTA DE PRODUCTOS</string>
 
+    <string name="pantry_list_header">Despensa</string>
+    <string name="complete_button">COMPLETO</string>
+    <string name="buy_later_button">COMPRAR DESPUES</string>
 
+    <string name="tasks_header">Lista de Tareas</string>
+    <string name="due_date_label">Fecha Límite</string>
 </resources>

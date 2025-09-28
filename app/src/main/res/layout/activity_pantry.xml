@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3E5F5"
+    tools:context=".PantryActivity">
+
+    <View
+        android:id="@+id/topBarBackground"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#E1BEE7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintBottom_toBottomOf="@id/topBarBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#4A148C" />
+
+    <TextView
+        android:id="@+id/headerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pantry_header"
+        android:textColor="#4A148C"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/topBarBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/topBarBackground" />
+
+    <ImageView
+        android:id="@+id/pantryMainIcon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_pantry_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBarBackground"
+        app:tint="#4A148C" />
+
+    <TextView
+        android:id="@+id/addToPantryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/add_to_pantry_title"
+        android:textColor="#6A1B9A"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pantryMainIcon" />
+
+    <TextView
+        android:id="@+id/productLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/product_label"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addToPantryTitle" />
+
+    <EditText
+        android:id="@+id/productEditText"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/field_background"
+        android:inputType="text"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/productLabel"
+        app:layout_constraintTop_toBottomOf="@id/productLabel" />
+
+    <TextView
+        android:id="@+id/quantityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/quantity_label"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/productEditText"
+        app:layout_constraintTop_toBottomOf="@id/productEditText" />
+
+    <EditText
+        android:id="@+id/quantityEditText"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/field_background"
+        android:inputType="number"
+        android:padding="12dp"
+        app:layout_constraintEnd_toStartOf="@id/addButton"
+        app:layout_constraintStart_toStartOf="@id/quantityLabel"
+        app:layout_constraintTop_toBottomOf="@id/quantityLabel" />
+
+    <ImageButton
+        android:id="@+id/addButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/green_button_background"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="@id/quantityEditText"
+        app:layout_constraintEnd_toEndOf="@id/productEditText"
+        app:layout_constraintTop_toTopOf="@id/quantityEditText"
+        app:tint="@android:color/white" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/viewProductListButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/view_product_list_button"
+        android:textSize="16sp"
+        app:backgroundTint="#9C27B0"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomActionView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/bottomActionView"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#E1BEE7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

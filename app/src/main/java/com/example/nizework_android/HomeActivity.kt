@@ -50,12 +50,14 @@ class HomeActivity : AppCompatActivity() {
 
         // Lógica para la pantalla de tareas (con mensaje temporal)
         binding.tasksButton.setOnClickListener {
-            Toast.makeText(this, "Abriendo Tareas...", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, TasksActivity::class.java)
+            startActivity(intent)
         }
 
-        // Lógica para la pantalla de despensa (con mensaje temporal)
+        // Lógica para la pantalla de despensa
         binding.pantryButton.setOnClickListener {
-            Toast.makeText(this, "Abriendo Despensa...", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, PantryActivity::class.java)
+            startActivity(intent)
+        }
         }
     }
-}
