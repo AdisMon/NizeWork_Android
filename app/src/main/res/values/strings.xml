@@ -29,4 +29,29 @@
     <string name="already_have_account_prompt">¿YA TIENES CUENTA?</string>
     <string name="login_link">INICIA SESIÓN</string>
 
+    <string name="profile_header">Perfil</string>
+    <string name="hint_age">Edad *</string>
+    <string name="hint_phone">Teléfono *</string>
+    <string name="save_changes_button">GUARDAR CAMBIOS</string>
+
+    <string name="services_header">Servicios</string>
+    <string name="service_category_basic">básico</string>
+    <string name="service_category_entertainment">Entretenimiento</string>
+    <string name="service_category_streaming">Streaming</string>
+
+    <string name="payment_header">Realizar pago</string>
+    <string name="transaction_details">Detalles de la transacción</string>
+    <string name="transaction_amount">Monto de transacción</string>
+    <string name="transaction_amount_value">15000.00 LKR</string>
+    <string name="transaction_ref">No. Referencia de transacción</string>
+    <string name="transaction_ref_value">A13XI45SCSA44J</string>
+    <string name="select_card_type">Selecciona el tipo de tarjeta</string>
+    <string name="card_number_hint">Número de tarjeta</string>
+    <string name="cardholder_name_hint">Nombre del propietario</string>
+    <string name="ccv_hint">CCV</string>
+    <string name="expiration_date_hint">Fecha de expiración (MM/YY)</string>
+    <string name="pay_button">PAGAR</string>
+
+
+
 </resources>
