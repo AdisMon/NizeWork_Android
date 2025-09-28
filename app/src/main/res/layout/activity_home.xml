@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".HomeActivity">
+
+    <View
+        android:id="@+id/topBackground"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:background="#4DD0E1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/waveView"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBackground" />
+
+    <View
+        android:id="@+id/bottomBackground"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#4DD0E1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="56dp"
+        android:contentDescription="@string/logo_description"
+        android:src="@drawable/nizeworklogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleNizeWork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/nizework_title"
+        android:textColor="#2E7D32"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoImageView" />
+
+    <ImageButton
+        android:id="@+id/profileButton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/profile_button_description"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_user_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#1A237E" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/servicesButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="48dp"
+        android:text="@string/services_button"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#4DD0E1"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_services"
+        app:iconGravity="textStart"
+        app:iconPadding="16dp"
+        app:iconTint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleNizeWork" />
+
+    <TextView
+        android:id="@+id/servicesDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/services_description"
+        android:textAlignment="center"
+        android:textColor="#455A64"
+        app:layout_constraintEnd_toEndOf="@id/servicesButton"
+        app:layout_constraintStart_toStartOf="@id/servicesButton"
+        app:layout_constraintTop_toBottomOf="@id/servicesButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tasksButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tasks_button"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#4DD0E1"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_tasks"
+        app:iconGravity="textStart"
+        app:iconPadding="16dp"
+        app:iconTint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@id/servicesButton"
+        app:layout_constraintStart_toStartOf="@id/servicesButton"
+        app:layout_constraintTop_toBottomOf="@id/servicesDescription" />
+
+    <TextView
+        android:id="@+id/tasksDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/tasks_description"
+        android:textAlignment="center"
+        android:textColor="#455A64"
+        app:layout_constraintEnd_toEndOf="@id/tasksButton"
+        app:layout_constraintStart_toStartOf="@id/tasksButton"
+        app:layout_constraintTop_toBottomOf="@id/tasksButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/pantryButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/pantry_button"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#4DD0E1"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_pantry"
+        app:iconGravity="textStart"
+        app:iconPadding="16dp"
+        app:iconTint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@id/tasksButton"
+        app:layout_constraintStart_toStartOf="@id/tasksButton"
+        app:layout_constraintTop_toBottomOf="@id/tasksDescription" />
+
+    <TextView
+        android:id="@+id/pantryDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/pantry_description"
+        android:textAlignment="center"
+        android:textColor="#455A64"
+        app:layout_constraintEnd_toEndOf="@id/pantryButton"
+        app:layout_constraintStart_toStartOf="@id/pantryButton"
+        app:layout_constraintTop_toBottomOf="@id/pantryButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

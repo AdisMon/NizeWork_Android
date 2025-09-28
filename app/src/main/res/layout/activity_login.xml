@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/nizework"
+            android:text="@string/nizework_title"
             android:textColor="#2E7D32"
             android:textSize="34sp"
             android:textStyle="bold"

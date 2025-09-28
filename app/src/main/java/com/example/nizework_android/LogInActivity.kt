@@ -1,8 +1,8 @@
 package com.example.nizework_android
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -15,53 +15,35 @@ class LogInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // --- INICIO DE LA MODIFICACIÓN ---
-        // Aplicamos el padding solo al contenedor del contenido principal
         ViewCompat.setOnApplyWindowInsetsListener(binding.mainContent) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        // --- FIN DE LA MODIFICACIÓN ---
 
+        // Configura el listener para el botón de 'INGRESAR'
         setupLoginButton()
-        // Aquí puedes añadir la configuración para el botón de registro
-        // setupRegisterButton()
+
+        // --- AÑADE ESTA LÍNEA PARA ACTIVAR EL BOTÓN DE 'REGISTRAR' ---
+        setupRegisterButton()
     }
 
     private fun setupLoginButton() {
         binding.loginButton.setOnClickListener {
-            val email = binding.emailEditText.text.toString()
-            val password = binding.passwordEditText.text.toString()
-            val correctEmail = "test@test.com"
-            val correctPassword = "1234"
-
-            if (email == correctEmail && password == correctPassword) {
-                showResultDialog("¡Éxito!", "Inicio de sesión correcto.")
-            } else {
-                showResultDialog("Error", "Credenciales incorrectas.")
-            }
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
-    // Si quieres añadir funcionalidad al botón de registrar
     private fun setupRegisterButton() {
         binding.registerButton.setOnClickListener {
             // Lógica para ir a la pantalla de registro
-            showResultDialog("Info", "Funcionalidad de registro no implementada.")
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
-    }
-
-    private fun showResultDialog(title: String, message: String) {
-        AlertDialog.Builder(this)
-            .setTitle(title)
-            .setMessage(message)
-            .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-            .create()
-            .show()
     }
 }

@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NizeWork_Android">
         <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".LogInActivity"
             android:exported="true">
             <intent-filter>

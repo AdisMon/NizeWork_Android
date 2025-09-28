@@ -45,6 +45,7 @@ dependencies {
     implementation(libs.material)
     // Se eliminó la línea conflictiva de aquí.
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.activity)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -1,5 +1,32 @@
 <resources>
     <string name="app_name">NizeWork_Android</string>
+
     <string name="todo">TODO</string>
-    <string name="nizework">NizeWork</string>
+    <string name="logo_description">Logo de la aplicación NizeWork</string>
+    <string name="profile_button_description">Botón para ver el perfil de usuario</string>
+
+    <string name="nizework_title">NizeWork</string>
+    <string name="login_subtitle">Inicia Sesión</string>
+    <string name="email_hint">Correo Electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">INGRESAR</string>
+    <string name="no_account_prompt">¿NO TIENES CUENTA?</string>
+    <string name="register_button">REGISTRAR</string>
+
+    <string name="services_button">SERVICIOS</string>
+    <string name="tasks_button">TAREAS</string>
+    <string name="pantry_button">DESPENSA</string>
+    <string name="services_description">Administra los pagos de tus servicios</string>
+    <string name="tasks_description">Gestiona tus actividades y tareas</string>
+    <string name="pantry_description">Controla tu inventario de despensa</string>
+
+    <string name="register_header">Registro</string>
+    <string name="hint_names">Nombre(s) *</string>
+    <string name="hint_first_last_name">Primer Apellido *</string>
+    <string name="hint_second_last_name">Segundo Apellido</string>
+    <string name="hint_password">Contraseña *</string>
+    <string name="register_button_new">REGISTRARSE</string>
+    <string name="already_have_account_prompt">¿YA TIENES CUENTA?</string>
+    <string name="login_link">INICIA SESIÓN</string>
+
 </resources>
