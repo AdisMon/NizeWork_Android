@@ -28,11 +28,9 @@ class PantryActivity : AppCompatActivity() {
             val quantity = binding.quantityEditText.text.toString()
 
             if (product.isNotEmpty() && quantity.isNotEmpty()) {
-                Toast.makeText(this, "Añadido: $quantity de $product", Toast.LENGTH_SHORT).show()
                 binding.productEditText.text.clear()
                 binding.quantityEditText.text.clear()
             } else {
-                Toast.makeText(this, "Por favor, completa ambos campos", Toast.LENGTH_SHORT).show()
             }
         }
 

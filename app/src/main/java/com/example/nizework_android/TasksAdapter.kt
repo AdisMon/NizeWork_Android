@@ -31,10 +31,6 @@ class TasksAdapter(private val tasks: List<Task>) :
         val task = tasks[position]
         holder.taskName.text = task.taskName
         holder.dueDate.text = task.dueDate
-
-        holder.completeButton.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "${task.taskName} completada!", Toast.LENGTH_SHORT).show()
             // Aquí podrías añadir lógica para eliminar la tarea de la lista o marcarla visualmente
         }
     }
-}

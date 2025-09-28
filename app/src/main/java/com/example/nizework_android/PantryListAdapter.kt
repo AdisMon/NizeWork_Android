@@ -32,13 +32,5 @@ class PantryListAdapter(private val pantryItems: List<PantryItem>) :
         val item = pantryItems[position]
         holder.productName.text = item.productName
         holder.quantity.text = item.quantity
-
-        // Lógica de simulación para los botones
-        holder.completeButton.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "${item.productName}: Marcado como completo", Toast.LENGTH_SHORT).show()
-        }
-        holder.buyLaterButton.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "${item.productName}: Se comprará después", Toast.LENGTH_SHORT).show()
         }
     }
-}

@@ -31,9 +31,5 @@ class PaymentActivity : AppCompatActivity() {
         binding.backButton.setOnClickListener {
             finish()
         }
-
-        binding.payButton.setOnClickListener {
-            Toast.makeText(this, "Procesando pago (Simulación)", Toast.LENGTH_SHORT).show()
         }
     }
-}

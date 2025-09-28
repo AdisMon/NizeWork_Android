@@ -23,9 +23,6 @@ class RegisterActivity : AppCompatActivity() {
             // Aquí puedes añadir lógica para leer los campos:
             // val fullName = binding.namesEditText.text.toString()
             // val password = binding.passwordEditText.text.toString()
-
-            Toast.makeText(this, "Registro exitoso (Simulación)", Toast.LENGTH_LONG).show()
-
             val intent = Intent(this, LogInActivity::class.java)
             // Estas flags limpian las actividades anteriores para que no se acumulen
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

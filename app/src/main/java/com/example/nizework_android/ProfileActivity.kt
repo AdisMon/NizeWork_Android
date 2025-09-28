@@ -28,7 +28,6 @@ class ProfileActivity : AppCompatActivity() {
             // Aquí iría la lógica para leer los datos de los campos
             // y guardarlos (por ejemplo, en una base de datos o en la nube).
             // Por ahora, solo mostramos un mensaje de simulación.
-            Toast.makeText(this, "Cambios guardados (Simulación)", Toast.LENGTH_SHORT).show()
         }
     }
 }
