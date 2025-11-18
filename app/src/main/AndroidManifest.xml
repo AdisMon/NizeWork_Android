@@ -2,45 +2,52 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+
+        android:usesCleartextTraffic="true"  android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NizeWork_Android">
+        android:theme="@style/Theme.NizeWork_Android"
+        tools:targetApi="31">
+
         <activity
-            android:name=".TasksActivity"
+            android:name=".ui.tasks.TasksActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.pantry.PantryListActivity"
             android:exported="false" />
         <activity
-            android:name=".PantryListActivity"
+            android:name=".ui.pantry.PantryActivity"
             android:exported="false" />
         <activity
-            android:name=".PantryActivity"
+            android:name=".ui.payment.PaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".PaymentActivity"
+            android:name=".ui.services.ServicesActivity"
             android:exported="false" />
         <activity
-            android:name=".ServicesActivity"
+            android:name=".ui.auth.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".ui.auth.RegisterActivity"
             android:exported="false" />
+
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="false" />
+
         <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LogInActivity"
+            android:name=".ui.auth.LogInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

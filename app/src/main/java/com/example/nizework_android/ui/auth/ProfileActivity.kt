@@ -1,7 +1,6 @@
-package com.example.nizework_android
+package com.example.nizework_android.ui.auth
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.nizework_android.databinding.ActivityProfileBinding
 

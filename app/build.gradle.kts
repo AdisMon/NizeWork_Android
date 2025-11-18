@@ -49,6 +49,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("androidx.activity:activity-ktx:1.9.0")
+
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.okhttp.logging.interceptor)
 
     // Dejamos únicamente esta línea, que es la correcta y explícita.
     implementation("androidx.activity:activity-ktx:1.9.0")

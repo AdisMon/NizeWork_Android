@@ -1,9 +1,13 @@
-package com.example.nizework_android
+package com.example.nizework_android.ui.services
 
-import android.content.Intent // <-- ASEGÚRATE DE TENER ESTE IMPORT
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.nizework_android.ui.payment.PaymentActivity
+import com.example.nizework_android.R
+import com.example.nizework_android.Service
+import com.example.nizework_android.services.ServicesAdapter
 import com.example.nizework_android.databinding.ActivityServicesBinding
 
 class ServicesActivity : AppCompatActivity() {
@@ -51,11 +55,35 @@ class ServicesActivity : AppCompatActivity() {
     private fun createSampleData(): List<Service> {
         return listOf(
             Service("básico", R.drawable.sideapalogo, "Servicio de agua", "SIDEAPA", "05/09/2025"),
-            Service("Entretenimiento", R.drawable.megacablelogo, "Servicio de cable", "MEGACABLE", "05/09/2025"),
-            Service("Streaming", R.drawable.spotifylogo, "Servicio de música", "SPOTIFY", "05/09/2025"),
+            Service(
+                "Entretenimiento",
+                R.drawable.megacablelogo,
+                "Servicio de cable",
+                "MEGACABLE",
+                "05/09/2025"
+            ),
+            Service(
+                "Streaming",
+                R.drawable.spotifylogo,
+                "Servicio de música",
+                "SPOTIFY",
+                "05/09/2025"
+            ),
             Service("básico", R.drawable.cfelogo, "Servicio de luz", "CFE", "05/09/2025"),
-            Service("Internet", R.drawable.telmexlogo, "Servicio de internet", "TELMEX", "10/09/2025"),
-            Service("Telefonía", R.drawable.telcellogo, "Servicio de celular", "TELCEL", "15/09/2025")
+            Service(
+                "Internet",
+                R.drawable.telmexlogo,
+                "Servicio de internet",
+                "TELMEX",
+                "10/09/2025"
+            ),
+            Service(
+                "Telefonía",
+                R.drawable.telcellogo,
+                "Servicio de celular",
+                "TELCEL",
+                "15/09/2025"
+            )
         )
     }
 }

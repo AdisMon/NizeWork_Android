@@ -1,9 +1,9 @@
-package com.example.nizework_android
+package com.example.nizework_android.ui.pantry
 
-import android.content.Intent // <-- SE AÑADIÓ ESTA LÍNEA
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.nizework_android.ui.pantry.PantryListActivity
 import com.example.nizework_android.databinding.ActivityPantryBinding
 
 class PantryActivity : AppCompatActivity() {

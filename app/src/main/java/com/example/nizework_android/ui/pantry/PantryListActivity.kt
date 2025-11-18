@@ -1,20 +1,20 @@
-package com.example.nizework_android
+package com.example.nizework_android.ui.pantry
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.nizework_android.databinding.ActivityTasksBinding
+import com.example.nizework_android.databinding.ActivityPantryListBinding
 
-class TasksActivity : AppCompatActivity() {
+class PantryListActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityTasksBinding
+    private lateinit var binding: ActivityPantryListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityTasksBinding.inflate(layoutInflater)
+        binding = ActivityPantryListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // Ya no necesitamos 'setupRecyclerView' ni 'createSampleData'
+
         setupButtons()
     }
 
@@ -23,5 +23,6 @@ class TasksActivity : AppCompatActivity() {
         binding.backButton.setOnClickListener {
             finish()
         }
+
     }
 }

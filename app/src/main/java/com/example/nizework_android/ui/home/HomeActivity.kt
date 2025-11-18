@@ -1,12 +1,15 @@
-package com.example.nizework_android
+package com.example.nizework_android.ui.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.nizework_android.ui.pantry.PantryActivity
+import com.example.nizework_android.ui.services.ServicesActivity
+import com.example.nizework_android.ui.tasks.TasksActivity
+import com.example.nizework_android.ui.auth.ProfileActivity
 import com.example.nizework_android.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {

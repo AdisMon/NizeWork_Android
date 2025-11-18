@@ -1,4 +1,4 @@
-package com.example.nizework_android
+package com.example.nizework_android.services
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.nizework_android.R
+import com.example.nizework_android.Service
 
 // --- INICIO DE LA MODIFICACIÓN ---
 // Añadimos un nuevo parámetro al constructor: una función que se ejecutará al hacer clic.
