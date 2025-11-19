@@ -33,7 +33,7 @@ class TasksAdapter(private var tasks: List<Task> = emptyList()) :
 
         holder.lblNombre.text = task.nombre
         holder.lblFecha.text = task.fechaL ?: "Sin fecha"
-        holder.lblDesc.text = if (!task.descripcion.isNullOrEmpty()) task.descripcion else "Sin descripción detallada."
+        holder.lblDesc.text = task.descripcion
 
         val isExpanded = task.isExpanded
         holder.lblDesc.visibility = if (isExpanded) View.VISIBLE else View.GONE

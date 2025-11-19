@@ -4,6 +4,10 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class Login(
+    @SerializedName("IdUsuarioPK")
+    @Expose
+    val id: Int? = null,
+
     @SerializedName("user")
     @Expose
     var user: String? = null,
