@@ -1,10 +1,20 @@
-package com.example.nizework_android
+package com.example.nizework_android.data.model
 
-// Un data class es una clase simple cuyo único propósito es guardar datos.
-data class Service(
-    val category: String,
-    val logoResId: Int, // Usaremos un ID de recurso para el logo
-    val serviceType: String,
-    val serviceName: String,
-    val dueDate: String
+import com.google.gson.annotations.SerializedName
+
+data class ServicioItem(
+    @SerializedName("id")
+    val id: Int,
+
+    @SerializedName("nombre")
+    val nombre: String,
+
+    @SerializedName("empresa")
+    val empresa: String,
+
+    @SerializedName("fecha_limite")
+    val fecha: String,
+
+    @SerializedName("categoria")
+    val categoria: String
 )

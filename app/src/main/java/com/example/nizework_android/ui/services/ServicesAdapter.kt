@@ -7,13 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nizework_android.R
-import com.example.nizework_android.Service
+import com.example.nizework_android.data.model.ServicioItem
 
-// --- INICIO DE LA MODIFICACIÓN ---
-// Añadimos un nuevo parámetro al constructor: una función que se ejecutará al hacer clic.
 class ServicesAdapter(
-    private val services: List<Service>,
-    private val onItemClicked: (Service) -> Unit // Esta es la acción de clic
+    private val services: List<ServicioItem>,
+    private val onItemClicked: (ServicioItem) -> Unit
 ) : RecyclerView.Adapter<ServicesAdapter.ServiceViewHolder>() {
 
     class ServiceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -36,17 +34,26 @@ class ServicesAdapter(
 
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
         val service = services[position]
-        holder.categoryTextView.text = service.category
-        holder.logoImageView.setImageResource(service.logoResId)
-        holder.serviceTypeTextView.text = service.serviceType
-        holder.serviceNameTextView.text = service.serviceName
-        holder.dueDateTextView.text = service.dueDate
 
-        // Le decimos a la tarjeta entera (itemView) que al ser presionada,
-        // ejecute la función 'onItemClicked' que recibimos.
+        holder.categoryTextView.text = service.categoria
+        holder.serviceTypeTextView.text = service.nombre
+        holder.serviceNameTextView.text = service.empresa
+        holder.dueDateTextView.text = service.fecha
+
+        val nombreNormal = service.nombre.lowercase().trim()
+        val icono = when {
+            nombreNormal.contains("luz") || nombreNormal.contains("cfe") -> R.drawable.cfelogo
+            nombreNormal.contains("agua") || nombreNormal.contains("sideapa") -> R.drawable.sideapalogo
+            nombreNormal.contains("cable") || nombreNormal.contains("mega") -> R.drawable.megacablelogo
+            nombreNormal.contains("spot") -> R.drawable.spotifylogo
+            nombreNormal.contains("telmex") -> R.drawable.telmexlogo
+            nombreNormal.contains("telcel") -> R.drawable.telcellogo
+            else -> R.drawable.ic_launcher_foreground
+        }
+        holder.logoImageView.setImageResource(icono)
+
         holder.itemView.setOnClickListener {
             onItemClicked(service)
         }
     }
-    // --- FIN DE LA MODIFICACIÓN ---
 }

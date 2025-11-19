@@ -6,8 +6,6 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 // IMPORTS NECESARIOS para el login con Retrofit
 import com.example.nizework_android.data.api.AuthApiService
@@ -24,7 +22,7 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var authApiService: AuthApiService // Instancia para la llamada a la API
+    private lateinit var authApiService: AuthApiService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,59 +30,69 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Inicialización de Retrofit: Adaptado de tu línea Java
-        // localNetworkAPI = ServiceRetrofit.getClient().create(LocalNetworkAPI.class);
         authApiService = RetrofitClient.instance.create(AuthApiService::class.java)
 
-        // Configura los listeners de los botones
         setupLoginButton()
-
-        Toast.makeText(this, "¡Bienvenido a NizeWork!", Toast.LENGTH_SHORT).show()
     }
 
-    /**
-     * Contiene la lógica de validación y la llamada a Retrofit (adaptada de tu onClick en Java).
-     */
     private fun setupLoginButton() {
-        // Asumiendo que el ID del botón es 'loginButton' o 'btnLogin'
-        binding.btnLogin.setOnClickListener { // Usamos binding.btnLogin o binding.loginButton
+        binding.btnLogin.setOnClickListener {
 
-            // Asumiendo IDs: txtEmail y txtPassword
             val usuario = binding.txtEmail.text.toString()
             val contra = binding.txtPassword.text.toString()
 
-            // 1. Validación de campos (adaptada de tu 'if (usuario.isEmpty() || contra.isEmpty())')
             if (usuario.isEmpty() || contra.isEmpty()) {
                 Toast.makeText(this, "Ingresa todos los campos para iniciar sesión", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener // Sale del lambda
+                return@setOnClickListener
             }
 
-            // 2. Creación del objeto Login (adaptada de tu 'login = new Login(); login.setUser(usuario);')
             val loginData = Login(user = usuario, password = contra)
 
-            // 3. Llamada asíncrona a la API (adaptada de tu call.enqueue)
             val call = authApiService.setUser(loginData)
             call.enqueue(object : Callback<ResponseLogin> {
 
                 override fun onResponse(call: Call<ResponseLogin>, response: Response<ResponseLogin>) {
                     if (response.isSuccessful && response.body() != null) {
-                        Log.d("RespuestaBien", response.message())
 
-                        // Navegación exitosa (a HomeActivity, equivalente a tu MainActivity2.class)
-                        val intent = Intent(this@LoginActivity, HomeActivity::class.java)
-                        startActivity(intent)
-                        finish()
+                        val apiResponse = response.body()!!
+
+                        if (!apiResponse.datos.isNullOrEmpty()) {
+
+                            val usuarioEncontrado = apiResponse.datos[0]
+
+                            val sharedPref = getSharedPreferences("NizeWorkPrefs", MODE_PRIVATE)
+                            with(sharedPref.edit()) {
+                                putInt("USER_ID", usuarioEncontrado.idUsuario)
+                                putString("USER_TOKEN", apiResponse.token)
+                                apply()
+                            }
+
+                            Log.d("LoginExito", "Usuario ID: ${usuarioEncontrado.idUsuario} guardado.")
+
+                            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            startActivity(intent)
+                            finish()
+
+                        } else {
+                            Toast.makeText(this@LoginActivity, "Error: Datos de usuario no encontrados", Toast.LENGTH_LONG).show()
+                        }
+                        // -----------------------------------------------
+
                     } else {
-                        // Manejo de errores 4xx (credenciales inválidas)
-                        Toast.makeText(this@LoginActivity, "Error: Credenciales no válidas", Toast.LENGTH_LONG).show()
-                        Log.d("LoginError", response.errorBody()?.string() ?: "Error de servidor")
+                        val errorMsg = try {
+                            response.errorBody()?.string()
+                        } catch (e: Exception) {
+                            "Error de servidor"
+                        }
+                        Log.d("LoginError", errorMsg ?: "")
+                        Toast.makeText(this@LoginActivity, "Credenciales no válidas", Toast.LENGTH_LONG).show()
                     }
                 }
 
                 override fun onFailure(call: Call<ResponseLogin>, t: Throwable) {
-                    // Fallo de red (no hay conexión)
                     Log.e("RespuestaMal", "Fallo de conexión: ${t.message}")
-                    Toast.makeText(this@LoginActivity, "Error de red. Inténtalo de nuevo.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@LoginActivity, "Error de red. Verifica tu conexión.", Toast.LENGTH_LONG).show()
                 }
             })
         }
