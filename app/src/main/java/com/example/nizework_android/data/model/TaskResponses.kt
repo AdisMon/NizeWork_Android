@@ -6,7 +6,6 @@ data class TaskListResponse(
     @SerializedName("success") val success: Boolean,
     @SerializedName("data") val data: List<Task>
 )
-
 data class TaskResponse(
     @SerializedName("success") val success: Boolean,
     @SerializedName("data") val data: Task

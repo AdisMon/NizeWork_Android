@@ -6,7 +6,7 @@ data class Task(
     @SerializedName("IdTareasPK") val id: Int,
     @SerializedName("Nombre") val nombre: String,
     @SerializedName("Tipo") val tipo: String?,
-    @SerializedName("Descripción") val descripcion: String?,
+    @SerializedName("Descripción") val descripcion: String,
     @SerializedName("FechaL") val fechaL: String?,
     @SerializedName("Hora") val hora: String?,
     @SerializedName("Id_UsuariosFK") val idUsuario: Int?,
