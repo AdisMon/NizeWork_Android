@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 public class ResponseLogin {
-    @SerializedName("login")
+    @SerializedName("datos")
     @Expose
-    private val login: Login? = null
+    val datos: List<Login>? = null
 }

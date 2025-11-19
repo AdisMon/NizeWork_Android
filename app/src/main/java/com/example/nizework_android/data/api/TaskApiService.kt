@@ -7,6 +7,6 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface TasksApiService {
-    @GET("api/tareas")
-    fun getListTareas(): Call<TaskListResponse>
+    @GET("api/tareas/usuario/{id}")
+    fun getTasks(@Path("id") userId: Int): Call<TaskListResponse>
 }
