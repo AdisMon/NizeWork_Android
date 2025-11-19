@@ -18,7 +18,6 @@ class TasksRepository {
                     onResult(null, "Error: ${response.code()}")
                 }
             }
-
             override fun onFailure(call: Call<TaskListResponse>, t: Throwable) {
                 onResult(null, "Fallo de conexión: ${t.message}")
             }
