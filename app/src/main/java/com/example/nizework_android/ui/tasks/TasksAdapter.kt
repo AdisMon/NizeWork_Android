@@ -18,8 +18,6 @@ class TasksAdapter(private var tasks: List<Task> = emptyList()) :
         val lblDesc: TextView = view.findViewById(R.id.taskDescTextView)
         val lblFecha: TextView = view.findViewById(R.id.dueDateTextView)
         val btnCompletar: ImageButton = view.findViewById(R.id.completeButton)
-
-        // Nuevos controles para expandir
         val btnExpand: ImageButton = view.findViewById(R.id.btnExpand)
         val separator: View = view.findViewById(R.id.separator)
     }
@@ -33,48 +31,40 @@ class TasksAdapter(private var tasks: List<Task> = emptyList()) :
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         val task = tasks[position]
 
-        // 1. Datos Básicos
         holder.lblNombre.text = task.nombre
         holder.lblFecha.text = task.fechaL ?: "Sin fecha"
         holder.lblDesc.text = if (!task.descripcion.isNullOrEmpty()) task.descripcion else "Sin descripción detallada."
 
-        // 2. LÓGICA DE EXPANDIR / CONTRAER
         val isExpanded = task.isExpanded
         holder.lblDesc.visibility = if (isExpanded) View.VISIBLE else View.GONE
         holder.separator.visibility = if (isExpanded) View.VISIBLE else View.GONE
 
-        // Cambiar icono de flecha (Arriba/Abajo)
         holder.btnExpand.setImageResource(
             if (isExpanded) android.R.drawable.arrow_up_float else android.R.drawable.arrow_down_float
         )
 
-        // Click en la flecha
         holder.btnExpand.setOnClickListener {
-            task.isExpanded = !task.isExpanded // Cambiamos el estado
-            notifyItemChanged(position) // Refrescamos SOLO esta fila (animación suave)
+            task.isExpanded = !task.isExpanded
+            notifyItemChanged(position)
         }
 
-        // 3. LÓGICA DEL CHECKBOX
         updateCheckboxColor(holder.btnCompletar, task.isCompleted)
 
         holder.btnCompletar.setOnClickListener {
-            task.isCompleted = !task.isCompleted // Invertimos estado
+            task.isCompleted = !task.isCompleted
             updateCheckboxColor(holder.btnCompletar, task.isCompleted)
-
-            // AQUÍ LUEGO LLAMAREMOS A LA API PARA GUARDAR EL CAMBIO
         }
     }
 
     private fun updateCheckboxColor(btn: ImageButton, isCompleted: Boolean) {
         if (isCompleted) {
-            btn.setColorFilter(Color.parseColor("#4CAF50")) // Verde
+            btn.setColorFilter(Color.parseColor("#4CAF50"))
         } else {
-            btn.setColorFilter(Color.parseColor("#BDBDBD")) // Gris
+            btn.setColorFilter(Color.parseColor("#BDBDBD"))
         }
     }
 
     override fun getItemCount() = tasks.size
-
     fun updateList(newTasks: List<Task>) {
         tasks = newTasks
         notifyDataSetChanged()

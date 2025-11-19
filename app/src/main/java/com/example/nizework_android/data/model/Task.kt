@@ -12,8 +12,8 @@ data class Task(
     @SerializedName("Id_UsuariosFK") val idUsuario: Int?,
     @SerializedName("Recordatorio") val recordatorio: Recordatorio?,
 
-    var isExpanded: Boolean = false,   // Para saber si está abierta
-    var isCompleted: Boolean = false   // Para el checkbox
+    var isExpanded: Boolean = false,
+    var isCompleted: Boolean = false
 )
 
 data class Recordatorio(
