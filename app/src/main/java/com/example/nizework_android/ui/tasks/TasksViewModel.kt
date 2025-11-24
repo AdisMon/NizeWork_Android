@@ -24,7 +24,7 @@ class TasksViewModel(application: Application) : AndroidViewModel(application) {
         val session = SessionManager(context)
         val userId = session.getUserId()
         if (userId == -1) {
-            _error.value = "No se encontró usuario logueado. Por favor inicia sesión."
+            _error.value = "Error: No se encontró usuario logueado. Por favor inicia sesión."
             return
         }
         _isLoading.value = true
