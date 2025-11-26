@@ -37,19 +37,20 @@
             android:background="@drawable/wave"
             app:layout_constraintEnd_toEndOf="parent"
 
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topView"
             tools:ignore="NotSibling" />
 
         <ImageView
             android:id="@+id/logoImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="32dp"
+            android:layout_width="139dp"
+            android:layout_height="123dp"
+            android:layout_marginTop="64dp"
             android:background="#E0E0E0"
             android:contentDescription="@string/todo"
-            android:src="@drawable/nizeworklogo"
+            android:src="@drawable/logo_nizework"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,14 +58,14 @@
             android:id="@+id/titleNizeWork"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="29dp"
             android:text="@string/nizework_title"
             android:textColor="#2E7D32"
             android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/logoImageView" />
+            app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
 
         <TextView
             android:id="@+id/subtitleLogin"
@@ -80,28 +81,10 @@
             app:layout_constraintTop_toBottomOf="@id/titleNizeWork" />
 
         <EditText
-            android:id="@+id/txtEmail"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/edittext_background"
-            android:drawableStart="@drawable/ic_email"
-            android:drawablePadding="12dp"
-            android:hint="Correo Electrónico"
-            android:inputType="textEmailAddress"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/subtitleLogin" />
-
-        <EditText
             android:id="@+id/txtPassword"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/edittext_background"
             android:drawableStart="@drawable/ic_lock"
             android:drawablePadding="12dp"
@@ -114,11 +97,30 @@
             app:layout_constraintStart_toStartOf="@id/txtEmail"
             app:layout_constraintTop_toBottomOf="@id/txtEmail" />
 
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/edittext_background"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="12dp"
+            android:hint="Correo Electrónico"
+            android:inputType="textEmailAddress"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subtitleLogin" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogin"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/button_primary_background"
             android:text="INGRESAR"
             android:textColor="@android:color/white"
