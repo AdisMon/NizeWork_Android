@@ -60,6 +60,7 @@ class ServicesActivity : AppCompatActivity() {
                     val adapter = ServicesAdapter(listaServicios) { serviceItem ->
                         val intent = Intent(this@ServicesActivity, PaymentActivity::class.java)
 
+                        intent.putExtra("SERVICE_ID", serviceItem.id)
                         intent.putExtra("SERVICE_NAME", serviceItem.nombre)
                         intent.putExtra("SERVICE_COMPANY", serviceItem.empresa)
                         intent.putExtra("TRANSACTION_AMOUNT", "150.00 LKR")

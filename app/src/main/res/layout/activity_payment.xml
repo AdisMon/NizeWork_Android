@@ -6,8 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".payment.PaymentActivity">
+    tools:context=".ui.payment.PaymentActivity">
 
+    <!-- BARRA SUPERIOR (Encabezado Rosa) -->
     <View
         android:id="@+id/topBarBackground"
         android:layout_width="0dp"
@@ -41,6 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/topBarBackground" />
 
+    <!-- CONTENIDO CON SCROLL -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -54,6 +56,7 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
+            <!-- TARJETA DE DETALLES DE TRANSACCIÓN -->
             <LinearLayout
                 android:id="@+id/transactionDetailsCard"
                 android:layout_width="0dp"
@@ -73,33 +76,62 @@
                     android:textStyle="bold"
                     android:textSize="18sp"/>
 
+                <!-- 1. TÍTULO DEL MONTO (Separado con margen para dar espacio) -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/transaction_amount"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/transaction_amount_value"
-                    android:textColor="@android:color/black"
+                    android:layout_marginTop="24dp"
+                    android:text="Monto de transacción (LKR)"
+                    android:textColor="#555555"
                     android:textStyle="bold"/>
 
+                <!-- 2. CAMPO EDITABLE DEL MONTO -->
+                <!-- hintEnabled="false" evita que el texto flote y se pegue al número -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false"
+                    app:boxBackgroundMode="none"
+                    android:layout_marginTop="4dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/amountEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:textColor="@android:color/black"
+                        android:background="@android:color/transparent"
+                        android:padding="0dp"
+                        android:text="0.00" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Línea separadora visual (opcional) -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- REFERENCIA -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="12dp"
                     android:text="@string/transaction_ref"/>
 
                 <TextView
+                    android:id="@+id/txtReferencia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/transaction_ref_value"
+                    android:layout_marginTop="4dp"
+                    android:text="Cargando..."
                     android:textColor="@android:color/black"
                     android:textStyle="bold"/>
             </LinearLayout>
 
+            <!-- SECCIÓN DE TARJETA -->
             <TextView
                 android:id="@+id/selectCardLabel"
                 android:layout_width="wrap_content"
@@ -110,6 +142,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/transactionDetailsCard"/>
 
+            <!-- LOGOS DE TARJETAS -->
             <LinearLayout
                 android:id="@+id/cardLogosLayout"
                 android:layout_width="wrap_content"
@@ -135,6 +168,7 @@
                     android:src="@drawable/amex_logo"/>
             </LinearLayout>
 
+            <!-- CAMPOS DE ENTRADA -->
             <EditText
                 android:id="@+id/cardNumberEditText"
                 android:layout_width="0dp"
@@ -189,6 +223,7 @@
                 app:layout_constraintStart_toEndOf="@id/ccvEditText"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
+            <!-- BOTÓN PAGAR -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/payButton"
                 android:layout_width="0dp"
