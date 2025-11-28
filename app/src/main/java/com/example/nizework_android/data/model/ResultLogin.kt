@@ -7,12 +7,4 @@ public class ResultLogin {
     @SerializedName("results")
     @Expose
     private var results: MutableList<Login?>? = null
-
-    fun getResults(): MutableList<Login?>? {
-        return results
-    }
-
-    fun setResults(results: MutableList<Login?>?) {
-        this.results = results
-    }
 }

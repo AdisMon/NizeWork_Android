@@ -12,4 +12,9 @@ object RetrofitClient {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
+    // Función para obtener la instancia del servicio para iniciar sesión
+    fun getAuthService(): AuthApiService {
+        return instance.create(AuthApiService::class.java)
+    }
 }

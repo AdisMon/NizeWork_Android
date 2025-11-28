@@ -32,6 +32,9 @@
     <string name="profile_header">Perfil</string>
     <string name="hint_age">Edad *</string>
     <string name="hint_phone">Teléfono *</string>
+    <string name="hint_tipo_cuenta">Tipo de Cuenta (Ej: Débito)</string>
+    <string name="hint_num_tarjeta">Número de Tarjeta (16 dígitos)</string>
+    <string name="hint_expiracion">Fecha de Expiración (MM/AA)</string>
     <string name="save_changes_button">GUARDAR CAMBIOS</string>
 
     <string name="services_header">Servicios</string>

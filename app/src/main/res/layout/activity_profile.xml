@@ -78,7 +78,7 @@
                 app:layout_constraintTop_toBottomOf="@id/profileImageView">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/namesEditText"
+                    android:id="@+id/txtNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName|textCapWords" />
@@ -96,7 +96,7 @@
                 app:layout_constraintTop_toBottomOf="@id/namesInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/firstLastNameEditText"
+                    android:id="@+id/txtApPaterno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName|textCapWords" />
@@ -114,7 +114,7 @@
                 app:layout_constraintTop_toBottomOf="@id/firstLastNameInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/secondLastNameEditText"
+                    android:id="@+id/txtApMaterno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName|textCapWords" />
@@ -132,7 +132,7 @@
                 app:layout_constraintTop_toBottomOf="@id/secondLastNameInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ageEditText"
+                    android:id="@+id/txtEdad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
@@ -150,7 +150,7 @@
                 app:layout_constraintTop_toBottomOf="@id/ageInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/phoneEditText"
+                    android:id="@+id/txtTelefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone" />
@@ -193,9 +193,63 @@
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tipoInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/hint_tipo_cuenta"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/passwordInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtTipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/numTarjetaInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/hint_num_tarjeta"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tipoInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtNumTarjeta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="16" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/expiracionInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/hint_expiracion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/numTarjetaInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtExpiracion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:maxLength="5" /> </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/saveChangesButton"
+                android:id="@+id/btnGuardar"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="32dp"
@@ -206,7 +260,8 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/passwordInputLayout" />
+                app:layout_constraintTop_toBottomOf="@id/expiracionInputLayout"
+                android:layout_marginBottom="32dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

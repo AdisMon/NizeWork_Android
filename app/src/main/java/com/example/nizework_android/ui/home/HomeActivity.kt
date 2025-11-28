@@ -11,6 +11,7 @@ import com.example.nizework_android.ui.services.ServicesActivity
 import com.example.nizework_android.ui.tasks.TasksActivity
 import com.example.nizework_android.ui.auth.ProfileActivity
 import com.example.nizework_android.databinding.ActivityHomeBinding
+import com.example.nizework_android.ui.auth.LoginActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -62,5 +63,10 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, PantryActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnSalir.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
+}
