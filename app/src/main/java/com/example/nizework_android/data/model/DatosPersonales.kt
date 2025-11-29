@@ -3,7 +3,6 @@ package com.example.nizework_android.data.model
 import com.google.gson.annotations.SerializedName
 
 data class DatosPersonales(
-    // Cuerpo para mostrar los datos personales del usuario
     @SerializedName("IdDatosMPK")
     val idDatosM: Int,
 

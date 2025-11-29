@@ -12,7 +12,6 @@ data class ResponseLogin (
     @SerializedName("datos_personales")
     val datosPersonales: List<DatosPersonales>,
 
-    // Campo para tomar la contraseña en texto plano
     @SerializedName("contra_ingresada")
     val contraIngresada: String?
 )

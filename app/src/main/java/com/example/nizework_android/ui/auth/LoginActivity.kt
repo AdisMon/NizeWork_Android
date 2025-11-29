@@ -30,8 +30,6 @@ class LoginActivity : AppCompatActivity() {
 
         iniciarSesion()
     }
-
-
     private fun iniciarSesion() {
         binding.btnLogin.setOnClickListener {
 

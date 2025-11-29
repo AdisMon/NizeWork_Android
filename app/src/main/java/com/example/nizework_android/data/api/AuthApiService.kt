@@ -12,12 +12,9 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface AuthApiService {
-    // Ruta para iniciar sesión en NizeWork
     @Headers("Content-Type: application/json")
     @POST("api/auth/login")
     fun setUser(@Body login: Login): Call<ResponseLogin>
-
-    // Ruta para editar los datos del usuario en "Perfil"
     @Headers("Content-Type: application/json")
     @PUT("api/registro/editar/{id}")
     fun updateUserData(@Path("id") userId: Int, @Body updateData: ActualizarDatos):

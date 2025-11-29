@@ -12,14 +12,10 @@ class PantryListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPantryListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Ya no necesitamos 'setupRecyclerView' ni 'createSampleData'
-
         setupButtons()
     }
 
     private fun setupButtons() {
-        // Botón para volver a la pantalla anterior
         binding.backButton.setOnClickListener {
             finish()
         }

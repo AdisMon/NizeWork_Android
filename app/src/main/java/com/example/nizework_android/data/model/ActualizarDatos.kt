@@ -3,7 +3,6 @@ package com.example.nizework_android.data.model
 import com.google.gson.annotations.SerializedName
 
 data class ActualizarDatos(
-    // Cuerpo para editar los datos del usuario logueado
     @SerializedName("nombre")
     val nombre: String,
 

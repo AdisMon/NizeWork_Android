@@ -15,7 +15,6 @@ data class Task(
     var isExpanded: Boolean = false,
     var isCompleted: Boolean = false
 )
-
 data class Recordatorio(
     @SerializedName("Requerido") val requerido: Boolean,
     @SerializedName("Fecha") val fecha: String?

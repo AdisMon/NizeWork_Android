@@ -17,7 +17,6 @@ class SessionManager(context: Context) {
         editor.apply()
     }
 
-    // Leer ID
     fun getUserId(): Int {
         return prefs.getInt(USER_ID, -1)
     }
